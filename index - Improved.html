@@ -1,0 +1,497 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whiskey Division | Discord Server</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0d0d0d;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,.92);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    border-bottom:1px solid rgba(15,191,204,.2);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:800;
+    color:#0fbfcc;
+    text-shadow:
+        0 0 10px rgba(15,191,204,.8),
+        0 0 20px rgba(15,191,204,.3);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:#0fbfcc;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 60px;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+    url('https://media.discordapp.net/attachments/1482937167452831968/1501052283008450560/Screenshot_2026-05-05_033619.png?ex=6a2432a0&is=6a22e120&hm=3cb8f3d0799e8c5c0d4b703abfc127ab60f29143f98f5b90e98905b92eb50902&=&format=webp&quality=lossless&width=1652&height=855');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-content h1{
+    font-size:4.5rem;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.hero-content span{
+    color:#0fbfcc;
+}
+
+.hero-content p{
+    margin-top:20px;
+    color:#cfcfcf;
+    font-size:1.1rem;
+}
+
+.online-status{
+    color:#4dff4d !important;
+    font-weight:700;
+    margin-top:25px;
+}
+
+.buttons{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    margin:10px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.btn-primary{
+    background:#0fbfcc;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#0da8b3;
+}
+
+.btn-secondary{
+    border:2px solid #0fbfcc;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:#0fbfcc;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    color:#0fbfcc;
+    margin-bottom:50px;
+    text-shadow:0 0 15px rgba(15,191,204,.3);
+}
+
+/* CARDS */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#151515;
+    padding:30px;
+    border-radius:16px;
+    border:1px solid #222;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#0fbfcc;
+    box-shadow:0 0 25px rgba(15,191,204,.2);
+}
+
+.card h3{
+    margin-bottom:12px;
+    color:#0fbfcc;
+}
+
+/* RULES */
+
+.rules{
+    display:grid;
+    gap:20px;
+}
+
+.rule{
+    background:#151515;
+    border-left:4px solid #0fbfcc;
+    padding:25px;
+    border-radius:10px;
+    line-height:1.8;
+}
+
+/* DISCORD */
+
+.discord{
+    text-align:center;
+}
+
+.discord-box{
+    max-width:750px;
+    margin:auto;
+    background:#151515;
+    padding:50px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.discord-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 30px rgba(15,191,204,.2);
+}
+
+.discord-box h3{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:black;
+    text-align:center;
+    padding:40px 20px;
+    color:#888;
+}
+
+footer p{
+    margin:5px 0;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .nav-container{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero-content h1{
+        font-size:2.5rem;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+    .discord-box{
+        padding:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-container">
+
+        <div class="logo">
+            Whiskey Division
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#stats">Stats</a>
+            <a href="#rules">Rules</a>
+            <a href="#discord">Discord</a>
+        </div>
+
+    </div>
+</nav>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Welcome to
+            <br>
+            <span>Whiskey Division</span>
+        </h1>
+
+        <p>
+            Semi-Serious FiveM Roleplay • Active Community • Custom Scripts
+        </p>
+
+        <p class="online-status">
+            ● Testing Ground
+        </p>
+
+        <div class="buttons">
+
+            <a href="fivem://connect/YOUR_SERVER_IP"
+               class="btn btn-primary">
+                Connect Now
+            </a>
+
+            <a href="#discord"
+               class="btn btn-secondary">
+                Join Discord
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="features">
+
+    <div class="container">
+
+        <h2 class="section-title">Why Choose Us?</h2>
+
+        <div class="features">
+
+            <div class="card">
+                <h3>Custom Scripts</h3>
+                <p>
+                    Unique gameplay systems developed specifically
+                    for our community.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Active Staff</h3>
+                <p>
+                    Friendly and professional moderators available daily.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Semi-Serious RP</h3>
+                <p>
+                    High-quality roleplay while maintaining a fun atmosphere.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Economy System</h3>
+                <p>
+                    Balanced jobs, businesses, and progression systems.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="stats">
+
+    <div class="container">
+
+        <h2 class="section-title">Community Stats</h2>
+
+        <div class="features">
+
+            <div class="card">
+                <h3>500+</h3>
+                <p>Discord Members</p>
+            </div>
+
+            <div class="card">
+                <h3>24/7</h3>
+                <p>Server Uptime</p>
+            </div>
+
+            <div class="card">
+                <h3>Custom</h3>
+                <p>Development</p>
+            </div>
+
+            <div class="card">
+                <h3>Active</h3>
+                <p>Staff Team</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="rules">
+
+    <div class="container">
+
+        <h2 class="section-title">Server Rules</h2>
+
+        <div class="rules">
+
+            <div class="rule">
+                <strong>Rule 1:</strong>
+                Treat all players and staff with respect. Harassment,
+                hate speech, racism, sexism, homophobia, transphobia,
+                or discrimination is strictly prohibited.
+            </div>
+
+            <div class="rule">
+                <strong>Rule 2:</strong>
+                No cheating, exploiting, or use of third-party modifications.
+            </div>
+
+            <div class="rule">
+                <strong>Rule 3:</strong>
+                Any hacks, cheats, exploits, or abuse of bugs will result
+                in a permanent ban.
+            </div>
+
+            <div class="rule">
+                <strong>Rule 4:</strong>
+                Staff decisions are final. If you disagree, create a ticket
+                rather than arguing publicly.
+            </div>
+
+            <div class="rule">
+                <strong>Rule 5:</strong>
+                Graphic self-harm RP, sexual abuse RP, ERP, hateful RP,
+                racism, and ban evasion are permanently prohibited.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="discord">
+
+    <div class="container discord">
+
+        <h2 class="section-title">Join Our Discord</h2>
+
+        <div class="discord-box">
+
+            <h3>Become Part of the Community</h3>
+
+            <p>
+                Stay updated with announcements, applications,
+                giveaways, and server events.
+            </p>
+
+            <br>
+
+            <a href="https://discord.gg/E6k7Hqd57w"
+               class="btn btn-primary">
+                Join Discord
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>© 2026 Whiskey Division</p>
+    <p>Semi-Serious Roleplay • Built for the Community</p>
+
+</footer>
+
+</body>
+</html>
+```
